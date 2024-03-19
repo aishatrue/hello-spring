@@ -1,6 +1,7 @@
 package hellospring.hellospring.repository;
 
 import hellospring.hellospring.domain.Member;
+import hellospring.hellospring.service.MemberService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,8 @@ import static org.assertj.core.api.Assertions.*;
 
 class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
+
+
 
     @AfterEach
     //메소드들이 끝날때마다 동작하는 콜백 메소드
@@ -69,4 +72,6 @@ class MemoryMemberRepositoryTest {
 
 
     }
+
+
 }
