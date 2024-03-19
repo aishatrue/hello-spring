@@ -1,4 +1,4 @@
-package hellospring.hellospring;
+package hellospring.hellospring.controller;
 
 
 import org.springframework.stereotype.Controller;
