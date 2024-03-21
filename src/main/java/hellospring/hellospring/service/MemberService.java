@@ -4,12 +4,14 @@ import hellospring.hellospring.domain.Member;
 import hellospring.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //어노테이션이 없으면 순수한 자바 클래스
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository ;
@@ -30,9 +32,12 @@ public class MemberService {
 //            throw new IllegalArgumentException("이미 존재하는 회원입니다.");
 //        });
 
-        validateDuplicateMember(member);
-        memberRepository.save(member);
-        return member.getId();
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+            return member.getId();
+
+
+
 
     }
 
@@ -48,10 +53,17 @@ public class MemberService {
      */
 
     public List<Member> findMembers(){
-        return memberRepository.findAll();
+
+            return memberRepository.findAll();
+
+
+
     }
 
     public Optional<Member> findOne(Long memberId){
-        return memberRepository.findById(memberId);
+
+            return memberRepository.findById(memberId);
+
+
     }
 }

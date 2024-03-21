@@ -19,6 +19,7 @@ public class MemberController {
     //스프링 컨테이너에 있는 member service를 가져다가 연결시켜
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberservice="+memberService.getClass());
     }
 
     @GetMapping("/members/new")
